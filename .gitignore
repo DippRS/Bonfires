@@ -5,6 +5,7 @@
 
 # Package Files #
 *.jar
+!RSBot.jar
 *.war
 *.ear
 
