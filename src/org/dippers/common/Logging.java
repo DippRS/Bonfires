@@ -16,7 +16,7 @@ public class Logging
 	 * @param where Where in the code the error happened. General summary, task etc.
 	 * @param error Specific error message which can be used for debugging.
 	 */
-	public static void LogError(String where, String error)
+	public static void Error(String where, String error)
 	{
 		LogMsg("[ERROR: " + where + "] " + error);
 	}
