@@ -10,6 +10,13 @@ public abstract class BaseDippTask extends ClientAccessor
 		super(ctx);
 	}
 	
+    public abstract String description();
 	public abstract boolean activate();
     public abstract void execute();
+    public abstract int priority();
+
+	public void gameMessage(String message)
+	{
+		// Don't need to do anything here. Override this function if needed
+	}
 }
