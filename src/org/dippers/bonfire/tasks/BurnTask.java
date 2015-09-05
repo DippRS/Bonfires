@@ -4,8 +4,6 @@ import org.dippers.common.BaseDippTask;
 import org.dippers.common.Items;
 import org.dippers.common.Logging;
 import org.powerbot.script.Condition;
-import org.powerbot.script.MessageEvent;
-import org.powerbot.script.MessageListener;
 import org.powerbot.script.Random;
 import org.powerbot.script.Tile;
 import org.powerbot.script.rt6.ClientContext;
@@ -30,13 +28,17 @@ public class BurnTask extends BaseDippTask
 			new Tile(3187, 3482),
 	};
 	
-	public BurnTask(ClientContext ctx) {
+	public BurnTask(ClientContext ctx) 
+	{
 		super(ctx);
-		// TODO Auto-generated constructor stub
+		
+		// Create our sub-tasks for moving to location, lighting logs and using the bonfire
+		
 	}
 
 	@Override
-	public String description() {
+	public String description() 
+	{
 		return "Burning Logs";
 	}
 
@@ -60,7 +62,7 @@ public class BurnTask extends BaseDippTask
 			// Walk to a tile close by
 			int tile = Random.nextInt(0, BONFIRE_TILES.length);
 			ctx.movement.step(BONFIRE_TILES[tile]);
-			
+
 			Condition.sleep(2500);
 			
 			Logging.LogMsg("Lighting logs.");

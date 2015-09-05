@@ -1,13 +1,20 @@
 package org.dippers.common;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.powerbot.script.rt6.ClientAccessor;
 import org.powerbot.script.rt6.ClientContext;
 
 public abstract class BaseDippTask extends ClientAccessor
 {
+	protected List<BaseDippTask> m_subtasks = new ArrayList<BaseDippTask>();
+	protected BaseDippTask m_activeSubtask;
+	
 	public BaseDippTask(ClientContext ctx) 
 	{
 		super(ctx);
+		m_activeSubtask = null;
 	}
 	
     public abstract String description();
