@@ -72,7 +72,8 @@ public class BonfireMain extends PollingScript<ClientContext>  implements Messag
 	@Override
 	public void messaged(MessageEvent arg0) 
 	{
-		if (m_activeTask != null)
-			m_activeTask.gameMessage(arg0.text());
+		// Just pass the message along to the tasks
+		for (BaseDippTask task : m_tasks)
+			task.gameMessage(arg0.text());
 	}
 }

@@ -24,6 +24,8 @@ public abstract class BaseDippTask extends ClientAccessor
 
 	public void gameMessage(String message)
 	{
-		// Don't need to do anything here. Override this function if needed
+		// Pass the message along to our subtasks
+		for (BaseDippTask task : m_subtasks)
+			task.gameMessage(message);
 	}
 }
